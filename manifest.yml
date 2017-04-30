@@ -1,0 +1,6 @@
+---
+applications:
+  - name: renispboot
+    buildpack: java_buildpack
+    memory: 256M
+    path: target/renispboot-0.1.0.jar
