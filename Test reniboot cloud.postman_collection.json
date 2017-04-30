@@ -1,0 +1,290 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Test reniboot cloud",
+		"_postman_id": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "A1. Create Friends Andy - John",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"friends\": [\"andy@example.com\", \"john@example.com\"]\r\n}"
+				},
+				"description": "1. Create Friends Andy"
+			},
+			"response": []
+		},
+		{
+			"name": "A2. Create Friends Andy - Peter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"friends\": [\"andy@example.com\", \"peter@example.com\"]\r\n}"
+				},
+				"description": "1. Create Friends Andy - Peter"
+			},
+			"response": []
+		},
+		{
+			"name": "A3. Create Friends John - Peter",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"friends\": [\"john@example.com\", \"peter@example.com\"]\r\n}"
+				},
+				"description": "1. Create Friends John - Peter"
+			},
+			"response": []
+		},
+		{
+			"name": "A4. Create Friends John - Andy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"friends\": [\"john@example.com\", \"andy@example.com\"]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "B1. Retrieve Friends Andy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"count\\\":2\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/retrieveFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"andy@example.com\"\r\n}"
+				},
+				"description": "2. Retrieve Friends Andy"
+			},
+			"response": []
+		},
+		{
+			"name": "C1. RetrieveCommonFriends",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"count\\\":1\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/retrieveCommonFriends",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"friends\": [\"andy@example.com\", \"john@example.com\"]\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "D1. Subscribe",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/subscribe",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestor\": \"lisa@example.com\",\r\n  \"target\": \"john@example.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "E1. Block",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/block",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"requestor\": \"andy@example.com\",\r\n  \"target\": \"john@example.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "F1. Valid Emails",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://reniboot.cfapps.io/validEmails",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sender\": \"john@example.com\",\r\n  \"text\": \"Hello World! kate@example.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

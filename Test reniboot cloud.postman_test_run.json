@@ -1,0 +1,1016 @@
+{
+	"id": "f021d3f9-9b56-21ac-b416-3c67469f0655",
+	"name": "Test reniboot cloud",
+	"allTests": [],
+	"timestamp": 1493560489651,
+	"collection_id": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "0",
+	"data": [],
+	"delay": 0,
+	"count": 5,
+	"collection": {
+		"id": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+		"name": "Test reniboot cloud",
+		"description": "",
+		"order": [
+			"5e0f30ed-b490-6fa4-9328-eb2d13fd50f6",
+			"aabc6fbf-30c6-59fd-cfc2-ee034cfae6fb",
+			"7d7af103-1ffc-5943-e04e-e80f447b0a61",
+			"41afc74f-3ce0-757b-9345-e5f0688170d3",
+			"ce239a9d-ca07-3bd2-607f-ff846c601398",
+			"7f455708-fffc-13c2-2eab-e0ac8df67a5d",
+			"e04f85c7-e8e2-d591-2149-31bf377787fa",
+			"9e75c39f-db85-bf15-ba57-9528d303a174",
+			"6ffb6f0a-47e1-51fa-ca2c-59d36eede75e"
+		],
+		"folders": [],
+		"requests": [
+			{
+				"id": "41afc74f-3ce0-757b-9345-e5f0688170d3",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n\t\"friends\": [\"john@example.com\", \"andy@example.com\"]\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558351673,
+				"name": "A4. Create Friends John - Andy",
+				"description": "",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "5e0f30ed-b490-6fa4-9328-eb2d13fd50f6",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n\t\"friends\": [\"andy@example.com\", \"john@example.com\"]\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558318832,
+				"name": "A1. Create Friends Andy - John",
+				"description": "1. Create Friends Andy",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "6ffb6f0a-47e1-51fa-ca2c-59d36eede75e",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/validEmails",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n  \"sender\": \"john@example.com\",\r\n  \"text\": \"Hello World! kate@example.com\"\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558390950,
+				"name": "F1. Valid Emails",
+				"description": "",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "7d7af103-1ffc-5943-e04e-e80f447b0a61",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n\t\"friends\": [\"john@example.com\", \"peter@example.com\"]\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558344982,
+				"name": "A3. Create Friends John - Peter",
+				"description": "1. Create Friends John - Peter",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "7f455708-fffc-13c2-2eab-e0ac8df67a5d",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/retrieveCommonFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n\t\"friends\": [\"andy@example.com\", \"john@example.com\"]\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"count\\\":1\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558364446,
+				"name": "C1. RetrieveCommonFriends",
+				"description": "",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "9e75c39f-db85-bf15-ba57-9528d303a174",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/block",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n  \"requestor\": \"andy@example.com\",\r\n  \"target\": \"john@example.com\"\r\n}",
+				"dataMode": "raw",
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558383828,
+				"name": "E1. Block",
+				"description": "",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "aabc6fbf-30c6-59fd-cfc2-ee034cfae6fb",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/createFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n\t\"friends\": [\"andy@example.com\", \"peter@example.com\"]\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558335727,
+				"name": "A2. Create Friends Andy - Peter",
+				"description": "1. Create Friends Andy - Peter",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "ce239a9d-ca07-3bd2-607f-ff846c601398",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/retrieveFriends",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n  \"email\": \"andy@example.com\"\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"count\\\":2\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558358092,
+				"name": "B1. Retrieve Friends Andy",
+				"description": "2. Retrieve Friends Andy",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			},
+			{
+				"id": "e04f85c7-e8e2-d591-2149-31bf377787fa",
+				"headers": "Content-Type: application/json\n",
+				"url": "https://reniboot.cfapps.io/subscribe",
+				"preRequestScript": null,
+				"pathVariables": {},
+				"method": "POST",
+				"data": "{\r\n  \"requestor\": \"lisa@example.com\",\r\n  \"target\": \"john@example.com\"\r\n}",
+				"dataMode": "raw",
+				"version": 2,
+				"tests": "tests[\"Body matches string\"] = responseBody.has(\"\\\"success\\\":true\");",
+				"currentHelper": "normal",
+				"helperAttributes": {},
+				"time": 1493558376656,
+				"name": "D1. Subscribe",
+				"description": "",
+				"collectionId": "d8c6c601-aa6f-a48f-4c33-fbd3aea351e4",
+				"responses": []
+			}
+		],
+		"timestamp": 1493558074670,
+		"synced": true,
+		"syncedFilename": "",
+		"remote_id": 0,
+		"remoteLink": "",
+		"remoteLinkUpdatedAt": null,
+		"public": false,
+		"owner": "1969936",
+		"subscribed": false,
+		"createdAt": 1493558074670,
+		"updatedAt": 1493558157622,
+		"write": true,
+		"isDeleted": false,
+		"published": false,
+		"favorite": false,
+		"permissions": {},
+		"syncedPermissions": {},
+		"sharedWithTeam": false
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"id": "5e0f30ed-b490-6fa4-9328-eb2d13fd50f6",
+			"name": "A1. Create Friends Andy - John",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				780,
+				272,
+				268,
+				273,
+				272
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 780,
+			"totalRequestTime": 1865,
+			"iterationResults": {}
+		},
+		{
+			"id": "aabc6fbf-30c6-59fd-cfc2-ee034cfae6fb",
+			"name": "A2. Create Friends Andy - Peter",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				266,
+				272,
+				272,
+				276,
+				279
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 266,
+			"totalRequestTime": 1365,
+			"iterationResults": {}
+		},
+		{
+			"id": "7d7af103-1ffc-5943-e04e-e80f447b0a61",
+			"name": "A3. Create Friends John - Peter",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				270,
+				264,
+				269,
+				276,
+				271
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 270,
+			"totalRequestTime": 1350,
+			"iterationResults": {}
+		},
+		{
+			"id": "41afc74f-3ce0-757b-9345-e5f0688170d3",
+			"name": "A4. Create Friends John - Andy",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				268,
+				276,
+				268,
+				269,
+				274
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 268,
+			"totalRequestTime": 1355,
+			"iterationResults": {}
+		},
+		{
+			"id": "ce239a9d-ca07-3bd2-607f-ff846c601398",
+			"name": "B1. Retrieve Friends Andy",
+			"url": "https://reniboot.cfapps.io/retrieveFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				266,
+				272,
+				278,
+				264,
+				275
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 266,
+			"totalRequestTime": 1355,
+			"iterationResults": {}
+		},
+		{
+			"id": "7f455708-fffc-13c2-2eab-e0ac8df67a5d",
+			"name": "C1. RetrieveCommonFriends",
+			"url": "https://reniboot.cfapps.io/retrieveCommonFriends",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				276,
+				271,
+				276,
+				282,
+				267
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 276,
+			"totalRequestTime": 1372,
+			"iterationResults": {}
+		},
+		{
+			"id": "e04f85c7-e8e2-d591-2149-31bf377787fa",
+			"name": "D1. Subscribe",
+			"url": "https://reniboot.cfapps.io/subscribe",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				268,
+				272,
+				264,
+				284,
+				271
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 268,
+			"totalRequestTime": 1359,
+			"iterationResults": {}
+		},
+		{
+			"id": "9e75c39f-db85-bf15-ba57-9528d303a174",
+			"name": "E1. Block",
+			"url": "https://reniboot.cfapps.io/block",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				282,
+				277,
+				272,
+				280,
+				265
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 282,
+			"totalRequestTime": 1376,
+			"iterationResults": {}
+		},
+		{
+			"id": "6ffb6f0a-47e1-51fa-ca2c-59d36eede75e",
+			"name": "F1. Valid Emails",
+			"url": "https://reniboot.cfapps.io/validEmails",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				272,
+				272,
+				274,
+				269,
+				280
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			],
+			"time": 272,
+			"totalRequestTime": 1367,
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 45,
+	"totalFail": 0,
+	"totalTime": 12764,
+	"lifecycle": "done",
+	"willStop": false,
+	"requests": [
+		{
+			"name": "A1. Create Friends Andy - John",
+			"id": "5e0f30ed-b490-6fa4-9328-eb2d13fd50f6",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"time": 780,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "A2. Create Friends Andy - Peter",
+			"id": "aabc6fbf-30c6-59fd-cfc2-ee034cfae6fb",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "A3. Create Friends John - Peter",
+			"id": "7d7af103-1ffc-5943-e04e-e80f447b0a61",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"time": 270,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "A4. Create Friends John - Andy",
+			"id": "41afc74f-3ce0-757b-9345-e5f0688170d3",
+			"url": "https://reniboot.cfapps.io/createFriends",
+			"time": 268,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "B1. Retrieve Friends Andy",
+			"id": "ce239a9d-ca07-3bd2-607f-ff846c601398",
+			"url": "https://reniboot.cfapps.io/retrieveFriends",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "C1. RetrieveCommonFriends",
+			"id": "7f455708-fffc-13c2-2eab-e0ac8df67a5d",
+			"url": "https://reniboot.cfapps.io/retrieveCommonFriends",
+			"time": 276,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "D1. Subscribe",
+			"id": "e04f85c7-e8e2-d591-2149-31bf377787fa",
+			"url": "https://reniboot.cfapps.io/subscribe",
+			"time": 268,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "E1. Block",
+			"id": "9e75c39f-db85-bf15-ba57-9528d303a174",
+			"url": "https://reniboot.cfapps.io/block",
+			"time": 282,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		},
+		{
+			"name": "F1. Valid Emails",
+			"id": "6ffb6f0a-47e1-51fa-ca2c-59d36eede75e",
+			"url": "https://reniboot.cfapps.io/validEmails",
+			"time": 272,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"gridTitles": [
+				"Body matches string"
+			],
+			"gridData": [
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				],
+				[
+					true
+				]
+			],
+			"tests": {
+				"Body matches string": true
+			}
+		}
+	],
+	"synced": false
+}
