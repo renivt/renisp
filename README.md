@@ -24,11 +24,11 @@ This solution is implemented as a Rest Microservice and hosted on the PCF cloud.
 3)	Interface: UserService is defined as a interface. 2 possible service implementattions can be used as mentioned in 4.
 4)	Models: This package has the data transfer objects that map the json input and the output parameters through the controller and service/data access layer.
 5)	Service Layer: There are 2 implemetations provided for the service layer. 
-    5.1)	Static hashtable (HTServiceImpl) implementation: This is completely implemented and tested. This was a simple way to implement the requirement. However, this will not work in a multi JVM environment. For simplicity, the service and data access layer is also clubbed together.
-    5.2)	DB (DBServiceImpl) based implementation: DB solution will be a more complete solution that will work on a distributed environment.This is only partially implemented. There is a good segregation between the service and the data access layer.
+5.1)	Static hashtable (HTServiceImpl) implementation: This is completely implemented and tested. This was a simple way to implement the requirement. However, this will not work in a multi JVM environment. For simplicity, the service and data access layer is also clubbed together.
+5.2)	DB (DBServiceImpl) based implementation: DB solution will be a more complete solution that will work on a distributed environment.This is only partially implemented. There is a good segregation between the service and the data access layer.
 
 Testing:
 1)	Test Driven development was used with Junit. The Junit class is included.
 2)	Final testing on cloud was done with a postman plugin in chrome. Attached is the postman collection and results used for testing.
-    2.1)	Request Collection - Test reniboot cloud.postman_collection.json
-    2.2)	Test Result Collection - Test reniboot cloud.postman_test_run.json
+2.1)	Request Collection - Test reniboot cloud.postman_collection.json
+2.2)	Test Result Collection - Test reniboot cloud.postman_test_run.json
