@@ -1,4 +1,4 @@
-# RENISP Project Information:
+# Reni's Project for SP:
 
 ## Software Language
 Java
@@ -18,7 +18,8 @@ The jar is then pushed to the cloud foundry through the cf command (cf push <app
 URL https://reniboot.cfapps.io. 
 ```
 
-### Hosted API’s:
+### Hosted Rest API’s
+The sample POST json inputs for the below requests can be found in the postman collection in the test section
 *	https://reniboot.cfapps.io/createFriends
 *	https://reniboot.cfapps.io/retrieveFriends
 *  https://reniboot.cfapps.io/retrieveCommonFriends
@@ -26,22 +27,22 @@ URL https://reniboot.cfapps.io.
 *  https://reniboot.cfapps.io/block
 *  https://reniboot.cfapps.io/validEmails
 
-## Design:
+## Design
 This solution is implemented as a Rest Microservice and hosted on the PCF cloud.
-###	Sprint Boot Startup class: 
+###	Sprint Boot Microservice Startup class
 com.renisp.Application is the core spring boot class that makes this solution a microservice.
-###  Controller: 
+###  Controller
 The rest controller is implemented with spring annotation. For simplicity the controller is merged with the Spring Boot class. The controller This class handles the json request and response and then passes the models to the injected userService interface.  
-###	Interface: 
+###	Interface
 UserService is defined as a interface. 2 possible service implementattions can be used as mentioned in 4.
-###	Models: 
+###	Models
 This package has the data transfer objects that map the json input and the output parameters through the controller and service/data access layer.
-###	Service Layer: 
+###	Service Layer
 There are 2 implemetations provided for the service layer. 
 *	Static hashtable (HTServiceImpl) implementation: This is completely implemented and tested. This was a simple way to implement the requirement. However, this will not work in a multi JVM environment. For simplicity, the service and data access layer is also clubbed together.
 *	DB (DBServiceImpl) based implementation: DB solution will be a more complete solution that will work on a distributed environment.This is only partially implemented. There is a good segregation between the service and the data access layer.
 
-## Testing:
+## Testing
 ###	JUnit
 Test Driven development was used with Junit. The Junit class is included.
 ###	Postman
