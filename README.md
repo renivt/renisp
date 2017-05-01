@@ -7,12 +7,16 @@ Java
 Spring Boot Microservice, Jackson, Junit
 
 ## Code Repository
+```
 https://github.com/renivt/renisp.git
+```
 This is a maven project. After importing as a maven project into a workspace, the maven install command can be used to compile, run the test case and create the jar.
 The jar is then pushed to the cloud foundry through the cf command (cf push <appname>)
 
 ## Accessing the PCF cloud version
+```
 URL https://reniboot.cfapps.io. 
+```
 
 ### Hosted API’s:
 *	https://reniboot.cfapps.io/createFriends
@@ -34,11 +38,13 @@ UserService is defined as a interface. 2 possible service implementattions can b
 This package has the data transfer objects that map the json input and the output parameters through the controller and service/data access layer.
 ###	Service Layer: 
 There are 2 implemetations provided for the service layer. 
-*	Service Layer - Static hashtable (HTServiceImpl) implementation: This is completely implemented and tested. This was a simple way to implement the requirement. However, this will not work in a multi JVM environment. For simplicity, the service and data access layer is also clubbed together.
-*	Service Layer - DB (DBServiceImpl) based implementation: DB solution will be a more complete solution that will work on a distributed environment.This is only partially implemented. There is a good segregation between the service and the data access layer.
+*	Static hashtable (HTServiceImpl) implementation: This is completely implemented and tested. This was a simple way to implement the requirement. However, this will not work in a multi JVM environment. For simplicity, the service and data access layer is also clubbed together.
+*	DB (DBServiceImpl) based implementation: DB solution will be a more complete solution that will work on a distributed environment.This is only partially implemented. There is a good segregation between the service and the data access layer.
 
 ## Testing:
-1)	JUnit : Test Driven development was used with Junit. The Junit class is included.
-2)	Postman : Final testing on cloud was done with a postman plugin in chrome. Attached is the postman collection and results used for testing.
-3) 	Postman - Request Collection: Test reniboot cloud.postman_collection.json
-4)	Postman - Test Result Collection: Test reniboot cloud.postman_test_run.json
+###	JUnit
+Test Driven development was used with Junit. The Junit class is included.
+###	Postman
+Final testing on cloud was done with a postman plugin in chrome. Attached is the postman collection and results used for testing.
+* 	Request Collection: Test reniboot cloud.postman_collection.json
+*	Test Result Collection: Test reniboot cloud.postman_test_run.json
