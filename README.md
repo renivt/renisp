@@ -5,6 +5,8 @@ Software Language: Java
 Software Stack: Spring Boot Microservice, Jackson, Junit
 
 Code Repository: https://github.com/renivt/renisp.git
+This is a maven project. After importing as a maven project into a workspace, the maven install command can be used to compile, run the test case and create the jar.
+The jar is then pushed to the cloud foundry through the cf command (cf push <appname>)
 
 Accessing the PCF cloud version: 
 URL https://reniboot.cfapps.io. 
